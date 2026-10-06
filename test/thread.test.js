@@ -141,6 +141,36 @@ test("counts replies beyond the configured depth", function () {
 	assert.equal(built.omitted, 1);
 });
 
+test("survives cyclic reply chains", function () {
+	var built = thread.buildThread(status("1"), { descendants: [
+		status("2", { parent: "1" }),
+		status("3", { parent: "2" }),
+		status("2", { parent: "3" })
+	] }, { maxDepth: 6, sort: "oldest" });
+	assert.deepEqual(built.replies.map(function (node) { return node.status.id; }), ["2"]);
+	assert.deepEqual(built.replies[0].replies.map(function (node) { return node.status.id; }), ["3"]);
+	assert.equal(built.replies[0].replies[0].replies.length, 0);
+});
+
+test("ignores descendants that reuse the root id", function () {
+	var built = thread.buildThread(status("1"), { descendants: [
+		status("2", { parent: "1" }),
+		status("1", { parent: "2" })
+	] }, { maxDepth: 6, sort: "oldest" });
+	assert.deepEqual(built.replies.map(function (node) { return node.status.id; }), ["2"]);
+	assert.equal(built.replies[0].replies.length, 0);
+});
+
+test("keeps the first status when duplicate ids appear", function () {
+	var built = thread.buildThread(status("1"), { descendants: [
+		status("2", { parent: "1", createdAt: "2026-01-01T00:00:00Z" }),
+		status("2", { parent: "1", createdAt: "2026-01-02T00:00:00Z", displayName: "Duplicate" }),
+		status("3", { parent: "2" })
+	] }, { maxDepth: 6, sort: "oldest" });
+	assert.deepEqual(built.replies.map(function (node) { return node.status.account.display_name; }), ["Alice"]);
+	assert.deepEqual(built.replies[0].replies.map(function (node) { return node.status.id; }), ["3"]);
+});
+
 test("reports hidden roots and keeps CW data on statuses", function () {
 	assert.equal(thread.buildThread(status("1", { visibility: "direct" }), { descendants: [] }, {}).kind, "hidden");
 	assert.equal(status("2", { spoiler: "Spoiler", sensitive: true }).spoiler_text, "Spoiler");
