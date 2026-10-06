@@ -185,3 +185,10 @@ test("isWebUrl accepts only http and https links", function () {
 	assert.equal(thread.isWebUrl("https://exa mple.com"), false);
 	assert.equal(thread.isWebUrl(null), false);
 });
+
+test("parses Mastodon async refresh retry delays", function () {
+	assert.equal(thread.asyncRefreshDelay("id=\"opaque\", retry=0.5, result_count=2"), 500);
+	assert.equal(thread.asyncRefreshDelay("id=\"opaque\", retry=20, result_count=2"), 10000);
+	assert.equal(thread.asyncRefreshDelay("id=\"opaque\", result_count=2"), 1000);
+	assert.equal(thread.asyncRefreshDelay("id=\"opaque\", retry=abc, result_count=2"), 1000);
+});

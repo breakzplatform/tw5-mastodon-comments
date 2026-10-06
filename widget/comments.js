@@ -160,7 +160,7 @@ Display the replies to a Mastodon post as comments on a tiddler
 			if (!error && refresh && !retried) {
 				setTimeout(function () {
 					self.loadContext(root, true, finish);
-				}, asyncRefreshDelay(refresh));
+				}, thread.asyncRefreshDelay(refresh));
 				return;
 			}
 			finish(error ? { error: self.describeError(error) } : { root: root, context: context });
@@ -198,12 +198,6 @@ Display the replies to a Mastodon post as comments on a tiddler
 		Object.keys(cache).forEach(function (key) {
 			if (cache[key].expires < now) delete cache[key];
 		});
-	}
-
-	function asyncRefreshDelay(header) {
-		var seconds = parseFloat(header);
-		var milliseconds = isNaN(seconds) ? 1000 : seconds * 1000;
-		return Math.max(0, Math.min(milliseconds, 10000));
 	}
 
 	function externalLink(href, className, children, title) {
