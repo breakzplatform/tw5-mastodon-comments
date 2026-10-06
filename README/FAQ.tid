@@ -26,7 +26,7 @@ See ''What is hidden'' in the Setup tab. Mastodon may also still be fetching rem
 
 !! How do I translate the texts?
 
-Edit the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]]. It holds every text the comments show, one `key: text` per line; `$count$` is replaced by a number. Your edited copy overrides the one in the plugin. The date format uses the [[TiddlyWiki date format|https://tiddlywiki.com/#DateFormat]], so month names follow the language of the wiki.
+Set the button labels in the [[Settings tab|$:/plugins/breakzplatform/mastodon-comments/settings/settings]] with `label-show` and `label-hide`. Edit the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]] for the other interface texts; it uses one `key: text` per line, and `$count$` is replaced by a number. Your edited copy overrides the one in the plugin. The date format uses the [[TiddlyWiki date format|https://tiddlywiki.com/#DateFormat]], so month names follow the language of the wiki.
 
 !! Can I place the comments somewhere else?
 

@@ -4,12 +4,14 @@ type: text/vnd.tiddlywiki
 
 ! Mastodon comments
 
-Use this plugin to show the replies to a [[Mastodon|https://joinmastodon.org]] post as comments on a tiddler. Announce a tiddler on Mastodon, paste the link of that post into the tiddler, and the conversation shows up at the bottom of it.
+Use this plugin to show the replies to a [[Mastodon|https://joinmastodon.org]] post as comments on a tiddler. Announce a tiddler on Mastodon, paste the link of that post into a `mastodon-post` field, and the conversation shows up at the bottom of it.
 
 * https://github.com/breakzplatform/tw5-mastodon-comments (main repository, ''please add a star if you like the plugin'')
 * Demo: https://tw5-mastodon-comments.joselito.dev
 
 The replies are read from the post's own Mastodon instance, with no login and no third-party service in between. They are drawn with the wiki's own markup and palette, so they follow your theme. The comments are read-only: a ''Reply on Mastodon'' link opens the post, where anyone with an account can join the conversation.
+
+Button labels are set in the [[Settings tab|$:/plugins/breakzplatform/mastodon-comments/settings/settings]] with `label-show` and `label-hide`. Other interface texts live in the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]].
 
 !! Installation instructions
 

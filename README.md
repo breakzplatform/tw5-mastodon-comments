@@ -34,9 +34,10 @@ In the *Mastodon comments* tab of the Control Panel:
 | Order | Oldest first | Also newest first or most favourited first, for the direct replies |
 | Show counts | Yes | Replies, boosts and favourites |
 | Collapse content warnings | Yes | Content warnings start closed |
-| Show and hide label text | Show/Hide Mastodon comments | Text of the button |
+| Show label text (`label-show`) | Show Mastodon comments | Text of the closed comments button |
+| Hide label text (`label-hide`) | Hide Mastodon comments | Text of the open comments button |
 
-The texts are in a language dictionary tiddler that can be edited to translate them.
+Button labels are set in the Settings tab with `label-show` and `label-hide`. Other interface texts are in the language dictionary tiddler and can be edited there for translation.
 
 ## Development
 

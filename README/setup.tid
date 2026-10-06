@@ -38,4 +38,8 @@ Only `http` and `https` links are accepted.
 
 When replies are hidden or beyond the depth limit, a short link points to the full thread on Mastodon.
 
+!! Settings and texts
+
+Button labels are set in the [[Settings tab|$:/plugins/breakzplatform/mastodon-comments/settings/settings]] with `label-show` and `label-hide`. Other interface texts live in the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]].
+
 //Select the next tab to continue.//
