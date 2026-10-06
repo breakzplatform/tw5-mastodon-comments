@@ -4,8 +4,6 @@ type: application/x-tiddler-dictionary
 ReplyOnMastodon: Reply on Mastodon
 Loading: Loading replies from Mastodon…
 NoReplies: No replies yet. Reply on Mastodon to start the conversation.
-ContinueThread: Continue this thread on Mastodon
-SeeAttachment: See the attachment on Mastodon
 SensitiveMedia: Show sensitive media
 Retry: Try again
 OpenPost: Open the post on Mastodon.
