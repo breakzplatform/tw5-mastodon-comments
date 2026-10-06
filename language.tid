@@ -1,0 +1,29 @@
+title: $:/plugins/breakzplatform/mastodon-comments/language
+type: application/x-tiddler-dictionary
+
+ReplyOnMastodon: Reply on Mastodon
+Loading: Loading replies from Mastodon…
+NoReplies: No replies yet. Reply on Mastodon to start the conversation.
+ContinueThread: Continue this thread on Mastodon
+SeeAttachment: See the attachment on Mastodon
+SensitiveMedia: Show sensitive media
+Retry: Try again
+OpenPost: Open the post on Mastodon.
+DateFormat: DDth mmm YYYY, 0hh:0mm
+Count/Reply: $count$ reply
+Count/Replies: $count$ replies
+Count/Boost: $count$ boost
+Count/Boosts: $count$ boosts
+Count/Favourite: $count$ favourite
+Count/Favourites: $count$ favourites
+Omitted/One: $count$ more reply is only available on Mastodon.
+Omitted/Many: $count$ more replies are only available on Mastodon.
+Error/MissingLink: Mastodon comments: this tiddler has no mastodon-post field.
+Error/InvalidLink: Mastodon comments: the mastodon-post field is not a link to a Mastodon post.
+Error/NotFound: The Mastodon post of this tiddler was not found. It may have been deleted.
+Error/RootHidden: The Mastodon post of this tiddler cannot be shown here.
+Error/LoginRequired: This Mastodon instance requires login before it shows the post.
+Error/RateLimit: Mastodon is limiting requests right now. Try again in a few minutes.
+Error/Network: Could not reach Mastodon. Check your connection.
+Error/Timeout: Mastodon did not answer in time.
+Error/Unavailable: Mastodon could not load the replies right now.

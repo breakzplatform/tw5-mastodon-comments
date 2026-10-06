@@ -1,0 +1,23 @@
+tags: $:/tags/ViewToolbar
+title: $:/plugins/breakzplatform/mastodon-comments/viewtoolbar/mastodon-comments-open
+type: text/vnd.tiddlywiki
+caption: {{$:/plugins/breakzplatform/mastodon-comments/icon}} Mastodon comments
+description: View Mastodon comments
+list-before: $:/core/ui/Buttons/info
+
+\whitespace trim
+<$list filter="[all[current]has[mastodon-post]subfilter{$:/config/breakzplatform/mastodon-comments/filter}]" variable="doNotOverrideCurrent">
+	<$button tooltip="View Mastodon comments" aria-label="mastodon comments" class=<<tv-config-toolbar-class>>>
+		<$action-setfield $tiddler={{{ [[$:/state/breakzplatform/mastodon-comments/]addsuffix<currentTiddler>] }}} text="open"/>
+		<$action-sendmessage $message="tm-mastodon-comments-scroll" $param=<<currentTiddler>>/>
+		<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+			{{$:/plugins/breakzplatform/mastodon-comments/icon}}
+		</$list>
+		<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+			<span class="tc-btn-text">
+				<$text text=" "/>
+				<$text text="view Mastodon comments"/>
+			</span>
+		</$list>
+	</$button>
+</$list>

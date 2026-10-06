@@ -1,0 +1,21 @@
+tags: $:/tags/ControlPanel
+title: $:/plugins/breakzplatform/mastodon-comments/settings/settings
+type: text/vnd.tiddlywiki
+caption: Mastodon comments
+
+<$list filter="[[$:/ControlPanel]!is[current]]">
+    Configuration for the plugin can be done from within the Mastodon comments tab in the [[ControlPanel|$:/ControlPanel]] as well.
+</$list>
+<$list filter="[[$:/ControlPanel]is[current]]">
+    Configuration for the [[Mastodon comments plugin|$:/plugins/breakzplatform/mastodon-comments]].
+</$list>
+
+|[[Filter|$:/config/breakzplatform/mastodon-comments/filter]]<blockquote>Which tiddlers can show comments? Only those with a `mastodon-post` field are affected.</blockquote> |<$edit-text tiddler="$:/config/breakzplatform/mastodon-comments/filter" default="" tag="input"/> |
+|[[Reply depth|$:/config/breakzplatform/mastodon-comments/depth]] |<$edit-text tiddler="$:/config/breakzplatform/mastodon-comments/depth" default="" tag="input" type="number" min="1" max="20"/><br/>//Levels of nested replies to show, from 1 to 20. Deeper replies get a link to Mastodon.// |
+|[[Order|$:/config/breakzplatform/mastodon-comments/sort]] |<$select tiddler="$:/config/breakzplatform/mastodon-comments/sort" default="oldest"><option value="oldest">Oldest first</option><option value="newest">Newest first</option><option value="favourites">Most favourited first</option></$select><br/>//Applies to the direct replies. Nested replies always read oldest first.// |
+|[[Show counts|$:/config/breakzplatform/mastodon-comments/counts]] |<$select tiddler="$:/config/breakzplatform/mastodon-comments/counts" default="yes"><option value="yes">Yes</option><option value="no">No</option></$select><br/>//Replies, boosts and favourites.// |
+|[[Collapse content warnings|$:/config/breakzplatform/mastodon-comments/collapse-cw]] |<$select tiddler="$:/config/breakzplatform/mastodon-comments/collapse-cw" default="yes"><option value="yes">Yes</option><option value="no">No</option></$select> |
+|[[Show label text|$:/config/breakzplatform/mastodon-comments/label-show]]|<$edit-text tiddler="$:/config/breakzplatform/mastodon-comments/label-show" default="" tag="input"/> |
+|[[Hide label text|$:/config/breakzplatform/mastodon-comments/label-hide]]|<$edit-text tiddler="$:/config/breakzplatform/mastodon-comments/label-hide" default="" tag="input"/> |
+
+To translate the texts shown with the comments, edit the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]].

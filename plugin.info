@@ -1,0 +1,11 @@
+{
+	"title": "$:/plugins/breakzplatform/mastodon-comments",
+	"description": "Replies to a Mastodon post as comments",
+	"author": "breakzplatform",
+	"version": "1.0.0",
+	"license": "MIT",
+	"core-version": ">=5.1.23",
+	"source": "https://github.com/breakzplatform/tw5-mastodon-comments",
+	"plugin-type": "plugin",
+	"list": "README/README README/setup settings/settings README/FAQ README/CHANGELOG"
+}

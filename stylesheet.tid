@@ -1,0 +1,158 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/breakzplatform/mastodon-comments/stylesheet
+type: text/vnd.tiddlywiki
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+.breakzplatform-mastodon-comments-toggle {
+	display: block;
+	width: 100%;
+	text-align: right;
+}
+
+.breakzplatform-mastodon-comments-toggle svg {
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+}
+
+.mastodon-comments {
+	margin: 0.5em 0 1em;
+}
+
+.mastodon-comments-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5em;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.75em;
+	border-bottom: 1px solid <<colour table-border>>;
+}
+
+.mastodon-comments-counts,
+.mastodon-comment-counts,
+.mastodon-comment-handle,
+.mastodon-comment-date,
+.mastodon-comments-loading,
+.mastodon-comment-placeholder {
+	color: <<colour muted-foreground>>;
+}
+
+.mastodon-comments-reply-link {
+	font-weight: bold;
+}
+
+.mastodon-comments-warning {
+	color: <<colour alert-foreground>>;
+}
+
+.mastodon-comments-message {
+	margin: 0.5em 0;
+}
+
+.mastodon-comment {
+	margin: 0.75em 0;
+}
+
+.mastodon-comment-replies {
+	margin-left: 1em;
+	padding-left: 0.75em;
+	border-left: 2px solid <<colour table-border>>;
+}
+
+.mastodon-comment-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25em 0.5em;
+	font-size: 0.9em;
+}
+
+.mastodon-comment-avatar {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+.mastodon-comments a.mastodon-comment-author,
+.mastodon-comments a.mastodon-comment-date,
+.mastodon-comments a.mastodon-comment-avatar-link {
+	text-decoration: none;
+}
+
+.mastodon-comment-name {
+	font-weight: bold;
+	color: <<colour foreground>>;
+}
+
+.mastodon-comment-text {
+	margin: 0.25em 0;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.mastodon-comment-text p {
+	margin: 0.25em 0;
+}
+
+.mastodon-comment-cw,
+.mastodon-comment-sensitive {
+	margin: 0.25em 0;
+}
+
+.mastodon-comment-cw-summary,
+.mastodon-comment-sensitive-summary {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.mastodon-comment-images {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25em;
+}
+
+.mastodon-comment-image {
+	max-width: 160px;
+	max-height: 160px;
+	border-radius: 4px;
+	object-fit: cover;
+}
+
+.mastodon-comment-card {
+	display: inline-block;
+	max-width: 24em;
+	padding: 0.25em 0.5em;
+	border: 1px solid <<colour table-border>>;
+	border-radius: 4px;
+}
+
+.mastodon-comment-card-title,
+.mastodon-comment-card-description {
+	display: block;
+	overflow-wrap: anywhere;
+}
+
+.mastodon-comment-card-title {
+	font-weight: bold;
+}
+
+.mastodon-comment-card-description {
+	color: <<colour muted-foreground>>;
+}
+
+.mastodon-custom-emoji {
+	width: 1.1em;
+	height: 1.1em;
+	vertical-align: -0.2em;
+}
+
+.mastodon-comment-sensitive,
+.mastodon-comment-counts {
+	font-size: 0.85em;
+	margin: 0.25em 0;
+}
