@@ -361,7 +361,9 @@ Display the replies to a Mastodon post as comments on a tiddler
 
 	MastodonCommentsWidget.prototype.buildMedia = function (status) {
 		var images = (Array.isArray(status.media_attachments) ? status.media_attachments : []).filter(function (media) {
-			return media && media.type === "image" && thread.isWebUrl(media.preview_url || media.url);
+			if (!media) return false;
+			if (media.type === "image") return thread.isWebUrl(media.preview_url || media.url);
+			return media.type === "gifv" && thread.isWebUrl(media.preview_url);
 		});
 		if (!images.length) return null;
 		var children = images.map(function (image) {
