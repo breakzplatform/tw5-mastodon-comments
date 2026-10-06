@@ -1,0 +1,33 @@
+tags:
+title: $:/plugins/breakzplatform/mastodon-comments/README/FAQ
+type: text/vnd.tiddlywiki
+
+! Frequently asked questions
+
+!! Do I need a Mastodon account or an API key?
+
+No. The plugin reads from public Mastodon API endpoints that many instances expose without login. You only need an account to post the announcement, and your visitors only need one to reply.
+
+!! Does it store anything in the wiki?
+
+Only the `mastodon-post` field and the settings. The replies are fetched when the comments are opened and kept in memory for five minutes.
+
+!! Does it work on a static or read-only wiki?
+
+Yes. Everything happens in the visitor's browser. When the wiki is rendered to static HTML, the comments are replaced by a link to the post.
+
+!! Why does an instance ask readers to log in?
+
+Some Mastodon instances require login for API access. When that happens, the plugin shows a message and links to the post on Mastodon.
+
+!! Why do some replies not show up?
+
+See ''What is hidden'' in the Setup tab. Mastodon may also still be fetching remote replies; newer instances can ask the plugin to retry the context request once.
+
+!! How do I translate the texts?
+
+Edit the [[language dictionary|$:/plugins/breakzplatform/mastodon-comments/language]]. It holds every text the comments show, one `key: text` per line; `$count$` is replaced by a number. Your edited copy overrides the one in the plugin. The date format uses the [[TiddlyWiki date format|https://tiddlywiki.com/#DateFormat]], so month names follow the language of the wiki.
+
+!! Can I place the comments somewhere else?
+
+Use the widget in any template: `<$mastodon-comments tiddler=<<currentTiddler>>/>`. The `post` attribute takes a link directly, for example `<$mastodon-comments post="https://mastodon.social/@Gargron/117382963679112384"/>`.
