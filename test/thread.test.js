@@ -89,6 +89,12 @@ test("handles nested tags and Mastodon invisible spans", function () {
 	assert.deepEqual(Object.keys(nodes[0].children[1].attributes), []);
 });
 
+test("fallback parser decodes HTML entities", function () {
+	var nodes = thread.sanitizeHtml("<p title=\"&quot;ignored&quot;\">Tom &amp; Jerry &lt;3 &#39;x&#39; &apos;y&apos; &#65; &#x42; <a href=\"https://example.com/?a=1&amp;b=2\">link</a></p>");
+	assert.equal(textOf(nodes), "Tom & Jerry <3 'x' 'y' A B link");
+	assert.equal(nodes[0].children[1].attributes.href.value, "https://example.com/?a=1&b=2");
+});
+
 test("renders custom emojis only with safe URLs", function () {
 	var nodes = thread.sanitizeHtml("<p>Hello :party: :bad:</p>", [
 		{ shortcode: "party", url: "https://cdn.example/party.png" },
