@@ -2,7 +2,7 @@
 	"title": "$:/plugins/breakzplatform/mastodon-comments",
 	"description": "Replies to a Mastodon post as comments",
 	"author": "breakzplatform",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "Apache-2.0",
 	"core-version": ">=5.1.23",
 	"source": "https://github.com/breakzplatform/tw5-mastodon-comments",
